@@ -8,11 +8,11 @@ import { CandidateService } from '../candidate.service';
 
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.page.html',
-  styleUrls: ['./details.page.scss'],
+  selector: 'app-candidate',
+  templateUrl: './candidate.page.html',
+  styleUrls: ['./candidate.page.scss'],
 })
-export class DetailsPage implements OnInit {
+export class CandidatePage implements OnInit {
   candidate$: Observable<Candidate>;
 
   

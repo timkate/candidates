@@ -35,6 +35,6 @@ export class HomePage {
   }
 
   _onClickCandidate(candidate:Candidate) {
-    this.router.navigate(['/details/', candidate.id]);
+    this.router.navigate(['/candidate', candidate.id]);
   }
 }
