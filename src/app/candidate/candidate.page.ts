@@ -30,7 +30,7 @@ export class CandidatePage implements OnInit {
   }
 
 
-  _gotoHome() {
-    this.router.navigate(['/']);
+  _onClickBack() {
+    this.router.navigate(['']);
   }
 }
