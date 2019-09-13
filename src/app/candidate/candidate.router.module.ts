@@ -10,6 +10,11 @@ const routes: Routes = [
     component: CandidatePage,
     children: [
       {
+        path: '',
+        redirectTo: 'overview',
+        pathMatch: 'full'
+      },
+      {
         path: 'overview',
         children: [
           {
@@ -37,17 +42,16 @@ const routes: Routes = [
         ],
       },
       {
-        path: '',
-        redirectTo: 'overview',
-        pathMatch: 'full'
-      }
+        path: 'scorecard',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./scorecard/scorecard.module').then(m => m.ScorecardPageModule)
+          },
+        ],
+      },
     ]
   },
-  {
-    path: '',
-    redirectTo: 'overview',
-    pathMatch: 'full',
-  }
 ];
 
 @NgModule({

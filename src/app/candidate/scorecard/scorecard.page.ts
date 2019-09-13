@@ -5,15 +5,14 @@ import { switchMap } from 'rxjs/operators';
 
 import { Candidate } from '../../candidate';
 import { CandidateService } from '../../candidate.service';
-import { skillname } from '../../constants';
 
 
 @Component({
-  selector: 'app-overview',
-  templateUrl: './overview.page.html',
-  styleUrls: ['./overview.page.scss'],
+  selector: 'app-scorecard',
+  templateUrl: './scorecard.page.html',
+  styleUrls: ['./scorecard.page.scss'],
 })
-export class OverviewPage implements OnInit {
+export class ScorecardPage implements OnInit {
   candidate$: Observable<Candidate>;
 
   

@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+import { Candidate } from '../../candidate';
+import { CandidateService } from '../../candidate.service';
+
 
 @Component({
   selector: 'app-questions',
@@ -6,10 +13,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./questions.page.scss'],
 })
 export class QuestionsPage implements OnInit {
+  candidate$: Observable<Candidate>;
 
-  constructor() { }
+  
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private service: CandidateService
+  ) {}
 
   ngOnInit() {
+    this.candidate$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        this.service.getCandidate(params.get('id')))
+    );
   }
-
 }
