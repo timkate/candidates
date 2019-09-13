@@ -3,9 +3,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+import { skillname } from '../../constants';
 import { Candidate } from '../../candidate';
 import { CandidateService } from '../../candidate.service';
-import { skillname } from '../../constants';
 
 
 @Component({
@@ -15,6 +15,8 @@ import { skillname } from '../../constants';
 })
 export class OverviewPage implements OnInit {
   candidate$: Observable<Candidate>;
+
+  isSummaryExpanded: boolean = true;
 
   
   constructor(
@@ -28,5 +30,9 @@ export class OverviewPage implements OnInit {
       switchMap((params: ParamMap) =>
         this.service.getCandidate(params.get('id')))
     );
+  }
+
+  _toggleExpandSummary(): void {
+    this.isSummaryExpanded = !this.isSummaryExpanded;
   }
 }

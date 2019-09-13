@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { CandidatePageRoutingModule } from './candidate.router.module';
+import { ComponentsModule } from '../components/components.module';
 
 import { CandidatePage } from './candidate.page';
 
@@ -14,6 +15,7 @@ import { CandidatePage } from './candidate.page';
     FormsModule,
     IonicModule,
     CandidatePageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [CandidatePage]
 })

@@ -5,5 +5,13 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-card (click)="_toggleExpandSummary()">
+    <ion-card-header>
+      <ion-card-title>Summary</ion-card-title>
+      <ion-note slot="end">></ion-note>
+    </ion-card-header>
+    <ion-card-content><cic-expandable expandHeight="100px" [expanded]="isSummaryExpanded" *ngIf="candidate$ | async as candidate">
+      {{ candidate.summary }}
+    </cic-expandable></ion-card-content>
+  </ion-card>
 </ion-content>
