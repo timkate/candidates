@@ -13,7 +13,7 @@ export class CandidateService {
 
 
   constructor() {
-    // ...fetch from API call
+    // TODO: fix this code to fetch from API call
     this.candidates = [
       {
         id: 0,
