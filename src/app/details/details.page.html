@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>details</ion-title>
+    <ion-title>Details Page</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-item *ngIf="candidate$ | async as candidate">
+    <ion-avatar slot="start"><img [src]="candidate.avatar"></ion-avatar>
+    <ion-label>
+      <h2>{{ candidate.name }}</h2>
+      <p>{{ candidate.description }}</p>
+    </ion-label>
+  </ion-item>
 </ion-content>
