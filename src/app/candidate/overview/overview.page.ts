@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { skillname } from '../../constants';
+import { skillname, skilltagcolor } from '../../constants';
 import { Candidate } from '../../candidate';
 import { CandidateService } from '../../candidate.service';
 
@@ -15,15 +15,19 @@ import { CandidateService } from '../../candidate.service';
 })
 export class OverviewPage implements OnInit {
   candidate$: Observable<Candidate>;
-
+  skillname: Array<string>;
+  skilltagcolor: Array<string>;
   isSummaryExpanded: boolean = true;
 
   
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: CandidateService
-  ) {}
+    private service: CandidateService,
+  ) {
+    this.skillname = skillname;
+    this.skilltagcolor = skilltagcolor;
+  }
 
   ngOnInit() {
     this.candidate$ = this.route.paramMap.pipe(
@@ -34,5 +38,10 @@ export class OverviewPage implements OnInit {
 
   _toggleExpandSummary(): void {
     this.isSummaryExpanded = !this.isSummaryExpanded;
+  }
+
+  _onClickScore(): void {
+    console.log('OverviewPage._onClickScore()::', 'this.route', this.route);
+    this.router.navigate(['scorecard'], {relativeTo: this.route.parent});
   }
 }

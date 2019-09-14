@@ -28,4 +28,23 @@ export class ScorecardPage implements OnInit {
         this.service.getCandidate(params.get('id')))
     );
   }
+
+  _onClickSubmit() {
+    
+  }
+
+  _onLeadershipChange(rating) {
+  }
+
+  _onCultureFitChange(rating) {
+  }
+
+  _onAgilityChange(rating) {
+  }
+
+  _onNaturalConfidenceChange(rating) {
+  }
+
+  _onXFactorChange(rating) {
+  }
 }

@@ -1,17 +1,56 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Overview</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header></ion-header>
 
-<ion-content>
+<ion-content *ngIf="candidate$ | async as candidate">
   <ion-card (click)="_toggleExpandSummary()">
     <ion-card-header>
       <ion-card-title>Summary</ion-card-title>
-      <ion-note slot="end">></ion-note>
     </ion-card-header>
-    <ion-card-content><cic-expandable expandHeight="100px" [expanded]="isSummaryExpanded" *ngIf="candidate$ | async as candidate">
+    <ion-card-content><cic-expandable expandHeight="100px" [expanded]="isSummaryExpanded">
       {{ candidate.summary }}
     </cic-expandable></ion-card-content>
   </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Skills</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-button *ngFor="let skill of candidate.skills; index as i" color="{{ skilltagcolor[skill] }}">{{ skillname[i] }}</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Work Experience</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list><ion-card *ngFor="let experience of candidate.experience">
+        <ion-card-header>
+          <ion-card-title>{{ experience.role }} - <small>{{ experience.company }}</small>&nbsp;<ion-icon name="star"></ion-icon></ion-card-title>
+          <ion-card-subtitle>{{ experience.datefrom }} - {{ experience.dateto }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content><ion-text>{{ experience.memo }}</ion-text></ion-card-content>
+      </ion-card></ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Education</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list><ion-card *ngFor="let education of candidate.education">
+        <ion-card-header>
+          <ion-card-subtitle>{{ education.school }}</ion-card-subtitle>
+          <ion-card-title>{{ education.degree }}</ion-card-title>
+          <ion-card-subtitle>{{ education.yearfrom }} - {{ education.yearto }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content><ion-text>{{ education.memo }}</ion-text></ion-card-content>
+      </ion-card></ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="secondary" (click)="_onClickScore()">
+    Score Candidate
+  </ion-button>
 </ion-content>

@@ -1,9 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Questions</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header></ion-header>
 
-<ion-content>
-
+<ion-content *ngIf="candidate$ | async as candidate">
+  <ion-card *ngFor="let questionanswer of candidate.questionanswer">
+    <ion-card-content>
+      Q: {{ questionanswer.question }}<br>
+      A: {{ questionanswer.answer }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

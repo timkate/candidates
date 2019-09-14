@@ -1,15 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Assessments</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header></ion-header>
 
-<ion-content>
-  <ion-item *ngIf="candidate$ | async as candidate">
-      <ion-avatar slot="start"><img [src]="candidate.avatar"></ion-avatar>
-      <ion-label>
-        <h2>{{ candidate.id }}</h2>
-        <p>{{ candidate.description }}</p>
-      </ion-label>
-    </ion-item>
+<ion-content *ngIf="candidate$ | async as candidate">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Personality Assessment</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-list-header>Extroversion</ion-list-header>
+        <ion-progress-bar value="{{ candidate.extroversion / 7 }}"></ion-progress-bar>
+      </ion-list>
+      <ion-list>
+        <ion-list-header>Agreeableness</ion-list-header>
+        <ion-progress-bar value="{{ candidate.agreeableness / 7 }}"></ion-progress-bar>
+      </ion-list>
+      <ion-list>
+        <ion-list-header>Openness</ion-list-header>
+        <ion-progress-bar value="{{ candidate.openness / 7 }}"></ion-progress-bar>
+      </ion-list>
+      <ion-list>
+        <ion-list-header>Conscientiousness</ion-list-header>
+        <ion-progress-bar value="{{ candidate.conscientiousness / 7 }}"></ion-progress-bar>
+      </ion-list>
+      <ion-list>
+        <ion-list-header>Neuroticism</ion-list-header>
+        <ion-progress-bar value="{{ candidate.neuroticism / 7 }}"></ion-progress-bar>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-button (click)="_onClickVideo()"></ion-button>
+  </ion-card>
 </ion-content>
