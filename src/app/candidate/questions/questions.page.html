@@ -2,9 +2,9 @@
 
 <ion-content *ngIf="candidate$ | async as candidate">
   <ion-card *ngFor="let questionanswer of candidate.questionanswer">
-    <ion-card-content>
-      Q: {{ questionanswer.question }}<br>
-      A: {{ questionanswer.answer }}
+    <ion-card-content style="border-color: lightgreen;"> <!-- TODO: Customize question left border color here-->
+      <p><strong>Q: {{ questionanswer.question }}</strong></p>
+      <p><strong>A:</strong> {{ questionanswer.answer }}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>

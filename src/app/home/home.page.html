@@ -1,18 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Graduate Accelerate Program 2020
-    </ion-title>
-  </ion-toolbar>
+  <h1>
+    Graduate Accelerate Program 2020
+  </h1>
 </ion-header>
 
 <ion-content>
-  <ion-list><ion-item *ngFor="let candidate of candidates$ | async" [class.selected]="candidate.id === selectedID" (click)="_onClickCandidate(candidate)">
+  <ion-list><ion-item lines="none" *ngFor="let candidate of candidates$ | async" [class.selected]="candidate.id === selectedID" (click)="_onClickCandidate(candidate)">
       <ion-avatar slot="start"><img [src]="candidate.avatar"></ion-avatar>
       <ion-label>
         <h2>{{ candidate.name }}</h2>
         <p>{{ candidate.description }}</p>
       </ion-label>
-      <ion-note slot="end">></ion-note>
+      <ion-note slot="end" class=".cs-home-endnote">></ion-note>
   </ion-item></ion-list>
 </ion-content>

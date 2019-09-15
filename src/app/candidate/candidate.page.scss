@@ -1,0 +1,52 @@
+ion-header {
+    height: 127px;
+}
+
+ion-toolbar {
+    padding-bottom: 0;
+}
+
+.cs-candidate-avatar {
+    padding-left: 12px;
+}
+
+.cs-candidate-avatar ion-avatar {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    margin-right: 19px;
+}
+
+.cs-candidate-avatar h2 {
+    font-size: 20px;
+}
+
+.cs-candidate-avatar p {
+    font-size: 15px;
+}
+
+ion-content {
+}
+
+ion-tabs {
+    box-shadow: 5px 10px #888888;
+}
+
+ion-tab-bar {
+}
+
+ion-tab-button {
+    --color: var(--ion-color-primary);
+    --color-selected: var(--ion-color-primary);
+}
+
+ion-tab-button.tab-selected {
+    --color: var(--ion-color-primary);
+    --color-selected: var(--ion-color-primary);
+    border-bottom: 4px solid;
+    font-weight: bold;
+}
+
+ion-tab-button > ion-label {
+    text-transform: uppercase;
+}

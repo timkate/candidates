@@ -1,0 +1,22 @@
+ion-content {
+    --background: #f1f5f9;
+}
+
+ion-card {
+    box-shadow: none !important;
+    border-radius: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+ion-card-content {
+    border-left: 3px solid red;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 15px;
+    color: #212b35;
+}
+
+ion-card-content p {
+    margin-bottom: 11px;
+}

@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button (click)="_onClickBack()"><ion-icon name="arrow-back"></ion-icon>Back</ion-button>
+    <ion-button fill="clear" (click)="_onClickBack()"><ion-icon name="arrow-back"></ion-icon> Back</ion-button>
   </ion-toolbar>
-  <ion-item *ngIf="candidate$ | async as candidate">
+  <ion-item *ngIf="candidate$ | async as candidate" lines="none" class="cs-candidate-avatar">
     <ion-avatar slot="start"><img [src]="candidate.avatar"></ion-avatar>
     <ion-label>
       <h2>{{ candidate.name }}</h2>
@@ -14,23 +14,13 @@
 <ion-content><ion-tabs>
   <ion-tab-bar slot="top">
     <ion-tab-button tab="overview">
-      <ion-icon name="document"></ion-icon>
       <ion-label>Overview</ion-label>
     </ion-tab-button>
-
     <ion-tab-button tab="questions">
-      <ion-icon name="help-circle-outline"></ion-icon>
       <ion-label>Questions</ion-label>
     </ion-tab-button>
-
     <ion-tab-button tab="assessments">
-      <ion-icon name="contacts"></ion-icon>
       <ion-label>Assessments</ion-label>
     </ion-tab-button>
-
-    <ion-tab-button tab="scorecard">
-        <ion-icon name="calculator"></ion-icon>
-        <ion-label>Scorecard</ion-label>
-      </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs></ion-content>

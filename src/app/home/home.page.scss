@@ -1,1 +1,46 @@
+ion-header {
+    background-color: #f1f5f9;
+    height: 119px;
+}
 
+ion-header h1 {
+    padding-left: 15px;
+    padding-top: 17px;
+    width: 258px;
+    height: 75px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #434957;
+}
+
+ion-content {
+    --background: #f1f5f9;
+}
+
+ion-list {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+ion-item {
+    margin-left: 25px;
+    padding-left: 0;
+    border-bottom: 1px solid lightgray;
+}
+
+ion-item ion-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+ion-item h2 {
+    font-size: 15px;
+}
+
+ion-item p {
+    font-size: 14px;
+}
+
+.cs-home-endnote {
+    font-size: 40px;
+}
