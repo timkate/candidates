@@ -17,7 +17,9 @@ import { CandidateService } from '../../candidate.service';
 export class AssessmentsPage implements OnInit {
   candidate$: Observable<Candidate>;
   isAssessmentExpanded: boolean = true;
+  isVideoInterviewExpanded: boolean = true;
   
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -48,5 +50,9 @@ export class AssessmentsPage implements OnInit {
 
   _toggleExpandAssessment() {
     this.isAssessmentExpanded = !this.isAssessmentExpanded;
+  }
+
+  _toggleExpandVideoInterview() {
+    this.isVideoInterviewExpanded = !this.isVideoInterviewExpanded;
   }
 }

@@ -30,7 +30,15 @@
   </ion-card>
 
   <ion-card>
-    <ion-button (click)="_onClickVideo()"></ion-button>
+    <ion-card-header (click)="_toggleExpandVideoInterview()">
+      <ion-card-title>Video Interview</ion-card-title>
+    </ion-card-header>
+    <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isVideoInterviewExpanded">
+      <ion-list *ngFor="let videointerview of candidate.videointerview">
+        <ion-list-header>Q: {{ videointerview.question }}</ion-list-header>
+        <ion-img src="./assets/videointerview.png"></ion-img>
+      </ion-list>
+    </cic-expandable></ion-card-content>
   </ion-card>
 
   <ion-button expand="full" fill="clear" (click)="_onClickScoreCard()">
