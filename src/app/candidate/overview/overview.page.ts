@@ -18,6 +18,8 @@ export class OverviewPage implements OnInit {
   skillname: Array<string>;
   skilltagcolor: Array<string>;
   isSummaryExpanded: boolean = true;
+  isExperienceExpanded: boolean = true;
+  isEducationExpanded: boolean = true;
 
   
   constructor(
@@ -38,6 +40,14 @@ export class OverviewPage implements OnInit {
 
   _toggleExpandSummary(): void {
     this.isSummaryExpanded = !this.isSummaryExpanded;
+  }
+
+  _toggleExpandExperience(): void {
+    this.isExperienceExpanded = !this.isExperienceExpanded;
+  }
+
+  _toggleExpandEducation(): void {
+    this.isEducationExpanded = !this.isEducationExpanded;
   }
 
   _onClickScore(): void {

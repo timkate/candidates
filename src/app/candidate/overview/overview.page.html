@@ -1,12 +1,12 @@
 <ion-header></ion-header>
 
 <ion-content *ngIf="candidate$ | async as candidate">
-  <ion-card (click)="_toggleExpandSummary()">
-    <ion-card-header>
+  <ion-card>
+    <ion-card-header (click)="_toggleExpandSummary()">
       <ion-card-title>Summary</ion-card-title>
     </ion-card-header>
-    <ion-card-content><cic-expandable expandHeight="100px" [expanded]="isSummaryExpanded">
-      {{ candidate.summary }}
+    <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isSummaryExpanded">
+      <ion-text class="cs-overview-summary">{{ candidate.summary }}</ion-text>
     </cic-expandable></ion-card-content>
   </ion-card>
 
@@ -20,26 +20,26 @@
   </ion-card>
 
   <ion-card>
-    <ion-card-header>
+    <ion-card-header (click)="_toggleExpandExperience()">
       <ion-card-title>Work Experience</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <ion-list><ion-card *ngFor="let experience of candidate.experience">
+    <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isExperienceExpanded">
+      <ion-list><ion-card *ngFor="let experience of candidate.experience" class="cs-overview-card-experience">
         <ion-card-header>
           <ion-card-title>{{ experience.role }} - <small>{{ experience.company }}</small>&nbsp;<ion-icon name="star"></ion-icon></ion-card-title>
           <ion-card-subtitle>{{ experience.datefrom }} - {{ experience.dateto }}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content><ion-text>{{ experience.memo }}</ion-text></ion-card-content>
       </ion-card></ion-list>
-    </ion-card-content>
+    </cic-expandable></ion-card-content>
   </ion-card>
 
   <ion-card>
-    <ion-card-header>
+    <ion-card-header (click)="_toggleExpandEducation()">
       <ion-card-title>Education</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <ion-list><ion-card *ngFor="let education of candidate.education">
+    <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isEducationExpanded">
+      <ion-list><ion-card *ngFor="let education of candidate.education" class="cs-overview-card-education">
         <ion-card-header>
           <ion-card-subtitle>{{ education.school }}</ion-card-subtitle>
           <ion-card-title>{{ education.degree }}</ion-card-title>
@@ -47,10 +47,10 @@
         </ion-card-header>
         <ion-card-content><ion-text>{{ education.memo }}</ion-text></ion-card-content>
       </ion-card></ion-list>
-    </ion-card-content>
+    </cic-expandable></ion-card-content>
   </ion-card>
 
-  <ion-button expand="full" color="secondary" (click)="_onClickScore()">
-    Score Candidate
+  <ion-button expand="full" fill="clear" (click)="_onClickSubmit()" class="cs-overview-button-scorecard">
+    Submit ScoreCard
   </ion-button>
 </ion-content>
