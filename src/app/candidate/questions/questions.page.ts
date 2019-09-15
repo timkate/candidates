@@ -31,6 +31,6 @@ export class QuestionsPage implements OnInit {
 
   
   _onClickScoreCard() {
-    
+    this.router.navigate(["../../../scorecard"], {relativeTo: this.route});
   }
 }

@@ -52,7 +52,6 @@ export class OverviewPage implements OnInit {
   }
 
   _onClickScoreCard(): void {
-    console.log('OverviewPage._onClickScore()::', 'this.route', this.route);
-    this.router.navigate(['scorecard'], {relativeTo: this.route.parent});
+    this.router.navigate(["../../../scorecard"], {relativeTo: this.route});
   }
 }

@@ -43,7 +43,7 @@ export class AssessmentsPage implements OnInit {
   }
 
   _onClickScoreCard() {
-    
+    this.router.navigate(["../../../scorecard"], {relativeTo: this.route});s
   }
 
   _toggleExpandAssessment() {
