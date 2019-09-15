@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -19,7 +20,8 @@ export class CandidatePage implements OnInit {
   constructor(
     public route: ActivatedRoute,
     private router: Router,
-    private service: CandidateService
+    private service: CandidateService,
+    private location: Location,
   ) {}
 
   ngOnInit() {
@@ -31,6 +33,10 @@ export class CandidatePage implements OnInit {
 
 
   _onClickBack() {
-    this.router.navigate(['']);
+    if (this.router.url.includes('scorecard')) {
+      this.location.back();
+    } else {
+      this.router.navigate(['home']);
+    }
   }
 }
