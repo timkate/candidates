@@ -22,7 +22,7 @@ export class CandidatePage implements OnInit {
     private router: Router,
     private service: CandidateService,
     private location: Location,
-  ) {}
+  ) {console.log(this.route.url);}
 
   ngOnInit() {
     this.candidate$ = this.route.paramMap.pipe(
@@ -41,6 +41,6 @@ export class CandidatePage implements OnInit {
   }
 
   _onClickScoreCard() {
-    this.router.navigate(["./scorecard"], {relativeTo: this.route});
+    this.router.navigateByUrl(this.router.createUrlTree(['candidate', this.route.snapshot.paramMap.get('id'), 'scorecard']).toString());
   }
 }

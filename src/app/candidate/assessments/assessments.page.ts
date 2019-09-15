@@ -51,8 +51,4 @@ export class AssessmentsPage implements OnInit {
   _toggleExpandVideoInterview() {
     this.isVideoInterviewExpanded = !this.isVideoInterviewExpanded;
   }
-
-  _onClickScoreCard() {
-    this.router.navigate(['../../../scorecard'], {relativeTo: this.route});
-  }
 }

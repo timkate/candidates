@@ -23,4 +23,5 @@
       <ion-label>Assessments</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
+  <ion-button expand="full" fill="clear" (click)="_onClickScoreCard()" class="cs-candidate-button-scorecard" *ngIf="!router.url.includes('scorecard')">Score Candidate</ion-button>
 </ion-tabs></ion-content>

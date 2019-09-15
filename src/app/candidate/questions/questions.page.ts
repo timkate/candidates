@@ -28,9 +28,4 @@ export class QuestionsPage implements OnInit {
         this.service.getCandidate(params.get('id')))
     );
   }
-
-
-  _onClickScoreCard() {
-    this.router.navigate(['../../../scorecard'], {relativeTo: this.route});
-  }
 }
