@@ -6,78 +6,78 @@
       <ion-card-title>Candidate Scorecard</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>
           Leadership
         </ion-label>
         <ionic4-star-rating #rating
           activeIcon="ios-star"
-          defaultIcon="ios-star-outline"
+          defaultIcon="ios-star"
           activeColor="#488aff" 
-          defaultColor="#f4f4f4"
+          defaultColor="#bbbbbb"
           readonly="false"
-          rating="3"
-          fontSize="32px"
+          rating="0"
+          fontSize="20px"
           (ratingChanged)="_onLeadershipChange($event)">
         </ionic4-star-rating>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>
           Culture Fit
         </ion-label>
         <ionic4-star-rating #rating
           activeIcon="ios-star"
-          defaultIcon="ios-star-outline"
+          defaultIcon="ios-star"
           activeColor="#488aff" 
-          defaultColor="#f4f4f4"
+          defaultColor="#bbbbbb"
           readonly="false"
-          rating="3"
-          fontSize="32px"
+          rating="0"
+          fontSize="20px"
           (ratingChanged)="_onCultureFitChange($event)">
         </ionic4-star-rating>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>
           Agility
         </ion-label>
         <ionic4-star-rating #rating
           activeIcon="ios-star"
-          defaultIcon="ios-star-outline"
+          defaultIcon="ios-star"
           activeColor="#488aff" 
-          defaultColor="#f4f4f4"
+          defaultColor="#bbbbbb"
           readonly="false"
-          rating="3"
-          fontSize="32px"
+          rating="0"
+          fontSize="20px"
           (ratingChanged)="_onAgilityChange($event)">
         </ionic4-star-rating>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>
           Natural Confidence
         </ion-label>
         <ionic4-star-rating #rating
           activeIcon="ios-star"
-          defaultIcon="ios-star-outline"
+          defaultIcon="ios-star"
           activeColor="#488aff" 
-          defaultColor="#f4f4f4"
+          defaultColor="#bbbbbb"
           readonly="false"
-          rating="3"
-          fontSize="32px"
+          rating="0"
+          fontSize="20px"
           (ratingChanged)="_onNaturalConfidenceChange($event)">
         </ionic4-star-rating>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>
           X Factor
         </ion-label>
         <ionic4-star-rating #rating
           activeIcon="ios-star"
-          defaultIcon="ios-star-outline"
+          defaultIcon="ios-star"
           activeColor="#488aff" 
-          defaultColor="#f4f4f4"
+          defaultColor="#bbbbbb"
           readonly="false"
-          rating="3"
-          fontSize="32px"
+          rating="0"
+          fontSize="20px"
           (ratingChanged)="_onXFactorChange($event)">
         </ionic4-star-rating>
       </ion-item>
@@ -91,7 +91,7 @@
       <ion-textarea placeholder="Start typing ..." rows="6"></ion-textarea>
     </ion-card-content>
   </ion-card>
-  <ion-button expand="full" color="secondary" (click)="_onClickSubmit()">
+  <ion-button expand="full" fill="clear" (click)="_onClickSubmit()">
     Submit ScoreCard
   </ion-button>
 </ion-content>

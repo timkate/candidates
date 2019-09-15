@@ -20,3 +20,9 @@ ion-card-content {
 ion-card-content p {
     margin-bottom: 11px;
 }
+
+ion-button {
+    text-transform: uppercase;
+    --background: #3bb273;
+    --color: #ffffff;
+}
