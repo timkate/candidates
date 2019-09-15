@@ -3,7 +3,7 @@
 <ion-content *ngIf="candidate$ | async as candidate">
   <ion-card>
     <ion-card-header (click)="_toggleExpandAssessment()">
-      <ion-card-title>Personality Assessment</ion-card-title>
+      <ion-card-title>Personality Assessment<ion-icon class="cs-candidate-expandable-icon" name="{{ isAssessmentExpanded ? 'arrow-down' : 'arrow-forward' }}"></ion-icon></ion-card-title>
     </ion-card-header>
     <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isAssessmentExpanded">
       <ion-list>
@@ -31,7 +31,7 @@
 
   <ion-card>
     <ion-card-header (click)="_toggleExpandVideoInterview()">
-      <ion-card-title>Video Interview</ion-card-title>
+      <ion-card-title>Video Interview<ion-icon class="cs-candidate-expandable-icon" name="{{ isVideoInterviewExpanded ? 'arrow-down' : 'arrow-forward' }}"></ion-icon></ion-card-title>
     </ion-card-header>
     <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isVideoInterviewExpanded">
       <ion-list *ngFor="let videointerview of candidate.videointerview">

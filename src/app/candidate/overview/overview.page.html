@@ -3,7 +3,7 @@
 <ion-content *ngIf="candidate$ | async as candidate">
   <ion-card>
     <ion-card-header (click)="_toggleExpandSummary()">
-      <ion-card-title>Summary</ion-card-title>
+      <ion-card-title>Summary<ion-icon class="cs-candidate-expandable-icon" name="{{ isSummaryExpanded ? 'arrow-down' : 'arrow-forward' }}"></ion-icon></ion-card-title>
     </ion-card-header>
     <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isSummaryExpanded">
       <ion-text class="cs-overview-summary">{{ candidate.summary }}</ion-text>
@@ -21,7 +21,7 @@
 
   <ion-card>
     <ion-card-header (click)="_toggleExpandExperience()">
-      <ion-card-title>Work Experience</ion-card-title>
+      <ion-card-title>Work Experience<ion-icon class="cs-candidate-expandable-icon" name="{{ isExperienceExpanded ? 'arrow-down' : 'arrow-forward' }}"></ion-icon></ion-card-title>
     </ion-card-header>
     <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isExperienceExpanded">
       <ion-list><ion-card *ngFor="let experience of candidate.experience" class="cs-overview-card-experience">
@@ -36,7 +36,7 @@
 
   <ion-card>
     <ion-card-header (click)="_toggleExpandEducation()">
-      <ion-card-title>Education</ion-card-title>
+      <ion-card-title>Education<ion-icon class="cs-candidate-expandable-icon" name="{{ isEducationExpanded ? 'arrow-down' : 'arrow-forward' }}"></ion-icon></ion-card-title>
     </ion-card-header>
     <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isEducationExpanded">
       <ion-list><ion-card *ngFor="let education of candidate.education" class="cs-overview-card-education">

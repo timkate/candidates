@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import { ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -24,7 +23,6 @@ export class AssessmentsPage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private service: CandidateService,
-    private videoPlayer: VideoPlayer,
     public modalCtrl: ModalController,
   ) {}
 
@@ -37,11 +35,6 @@ export class AssessmentsPage implements OnInit {
 
   
   _onClickVideo() {
-    this.videoPlayer.play('file:///Volumes/Data/Workspace/_Backup/themeforest.net/_freedownloads/iconic-icelandic-landscape-AJHC5S7.mov').then(() => {
-      console.log('video completed');
-    }).catch(err => {
-      console.log(err);
-    });
   }
 
   _toggleExpandAssessment() {

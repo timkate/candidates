@@ -22,7 +22,7 @@ export class CandidatePage implements OnInit {
     private router: Router,
     private service: CandidateService,
     private location: Location,
-  ) {console.log(this.route.url);}
+  ) {}
 
   ngOnInit() {
     this.candidate$ = this.route.paramMap.pipe(
