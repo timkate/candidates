@@ -49,4 +49,7 @@
       </ion-card></ion-list>
     </cic-expandable></ion-card-content>
   </ion-card>
+  <ion-button expand="full" fill="clear" (click)="_onClickScoreCard()" class="cs-candidate-button-scorecard" *ngIf="!router.url.includes('scorecard')">
+    Score Candidate
+  </ion-button>
 </ion-content>

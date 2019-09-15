@@ -95,3 +95,14 @@ ion-card ion-card-content ion-list {
     margin-left: 0;
     color: #000000;
 }
+
+.cs-candidate-button-scorecard {
+    text-transform: uppercase;
+    --background: #3bb273;
+    background: #3bb273;
+    --color: #ffffff;
+    margin: 0;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
