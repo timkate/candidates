@@ -38,6 +38,7 @@ export class OverviewPage implements OnInit {
     );
   }
 
+  
   _toggleExpandSummary(): void {
     this.isSummaryExpanded = !this.isSummaryExpanded;
   }
@@ -50,7 +51,7 @@ export class OverviewPage implements OnInit {
     this.isEducationExpanded = !this.isEducationExpanded;
   }
 
-  _onClickScore(): void {
+  _onClickScoreCard(): void {
     console.log('OverviewPage._onClickScore()::', 'this.route', this.route);
     this.router.navigate(['scorecard'], {relativeTo: this.route.parent});
   }

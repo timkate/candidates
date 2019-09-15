@@ -28,4 +28,9 @@ export class QuestionsPage implements OnInit {
         this.service.getCandidate(params.get('id')))
     );
   }
+
+  
+  _onClickScoreCard() {
+    
+  }
 }

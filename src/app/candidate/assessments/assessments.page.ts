@@ -16,7 +16,7 @@ import { CandidateService } from '../../candidate.service';
 })
 export class AssessmentsPage implements OnInit {
   candidate$: Observable<Candidate>;
-
+  isAssessmentExpanded: boolean = true;
   
   constructor(
     private route: ActivatedRoute,
@@ -33,11 +33,20 @@ export class AssessmentsPage implements OnInit {
     );
   }
 
+  
   _onClickVideo() {
     this.videoPlayer.play('file:///Volumes/Data/Workspace/_Backup/themeforest.net/_freedownloads/iconic-icelandic-landscape-AJHC5S7.mov').then(() => {
       console.log('video completed');
     }).catch(err => {
       console.log(err);
     });
+  }
+
+  _onClickScoreCard() {
+    
+  }
+
+  _toggleExpandAssessment() {
+    this.isAssessmentExpanded = !this.isAssessmentExpanded;
   }
 }

@@ -2,10 +2,10 @@
 
 <ion-content *ngIf="candidate$ | async as candidate">
   <ion-card>
-    <ion-card-header>
+    <ion-card-header (click)="_toggleExpandAssessment()">
       <ion-card-title>Personality Assessment</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content><cic-expandable expandHeight="auto" [expanded]="isAssessmentExpanded">
       <ion-list>
         <ion-list-header>Extroversion</ion-list-header>
         <ion-progress-bar value="{{ candidate.extroversion / 7 }}"></ion-progress-bar>
@@ -26,10 +26,14 @@
         <ion-list-header>Neuroticism</ion-list-header>
         <ion-progress-bar value="{{ candidate.neuroticism / 7 }}"></ion-progress-bar>
       </ion-list>
-    </ion-card-content>
+    </cic-expandable></ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-button (click)="_onClickVideo()"></ion-button>
   </ion-card>
+
+  <ion-button expand="full" fill="clear" (click)="_onClickScoreCard()">
+    Score Candidate
+  </ion-button>
 </ion-content>
