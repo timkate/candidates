@@ -44,10 +44,6 @@ export class AssessmentsPage implements OnInit {
     });
   }
 
-  _onClickScoreCard() {
-    this.router.navigate(["../../../scorecard"], {relativeTo: this.route});
-  }
-
   _toggleExpandAssessment() {
     this.isAssessmentExpanded = !this.isAssessmentExpanded;
   }

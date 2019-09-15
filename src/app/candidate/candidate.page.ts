@@ -39,4 +39,8 @@ export class CandidatePage implements OnInit {
       this.router.navigate(['home']);
     }
   }
+
+  _onClickScoreCard() {
+    this.router.navigate(["./scorecard"], {relativeTo: this.route});
+  }
 }

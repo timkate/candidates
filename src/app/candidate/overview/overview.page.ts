@@ -50,8 +50,4 @@ export class OverviewPage implements OnInit {
   _toggleExpandEducation(): void {
     this.isEducationExpanded = !this.isEducationExpanded;
   }
-
-  _onClickScoreCard(): void {
-    this.router.navigate(["../../../scorecard"], {relativeTo: this.route});
-  }
 }

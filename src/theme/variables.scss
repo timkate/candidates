@@ -78,4 +78,7 @@
 
   /** Font **/
   --ion-font-family: 'Roboto';
+  font-family: var(--ion-font-family) !important;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
